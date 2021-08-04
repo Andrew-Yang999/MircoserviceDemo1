@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.andrew.mapper.PaymentMapper">
+    <resultMap id="BaseResultMap" type="com.andrew.entity.PaymentEntity">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <id column="serial" jdbcType="VARCHAR" property="serial"/>
+    </resultMap>
+    <select id="select" parameterType="Long" resultMap="BaseResultMap">
+        SELECT *
+        FROM payment
+        where id = #{id}
+    </select>
+    <insert id="create" parameterType="com.andrew.entity.PaymentEntity" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO payment(serial) VALUE (#{serial})
+    </insert>
+</mapper>

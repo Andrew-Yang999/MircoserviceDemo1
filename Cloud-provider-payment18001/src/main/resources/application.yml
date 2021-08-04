@@ -1,0 +1,21 @@
+server:
+  port: 18001
+spring:
+  application:
+    name: Cloud-provider-payment18001
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/payment?useUnicode=true&characterEncoding=utf-8&useSsl=false
+mybatis:
+  mapper-locations: classpath:mapper/*xml
+  type-aliases-package: com.andrew.entity.*Entity
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka17001.com:17001/eureka
+    register-with-eureka: true
+    fetch-registry: true

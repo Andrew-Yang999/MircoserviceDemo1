@@ -1,0 +1,12 @@
+server:
+  port: 18801
+spring:
+  application:
+    name: Cloud-consumer-order18801
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka17001.com:17001/eureka
+    register-with-eureka: true
+    fetch-registry: true
