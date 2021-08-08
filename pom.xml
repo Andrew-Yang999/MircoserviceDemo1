@@ -21,6 +21,7 @@
         <module>Cloud-consumer-feign-hystrix-order18803</module>
         <module>Cloud-consumer-hystrix-dashboard19001</module>
         <module>Cloud-gateway-gateway19002</module>
+        <module>Cloud-config-center-19003</module>
     </modules>
 
     <name>MircoserviceDemo1</name>
