@@ -1,0 +1,27 @@
+server:
+  port: 19004
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka17001.com:17001/eureka,http://eureka17002.com:17002/eureka #集群版
+spring:
+  application:
+    name: Cloud-config-center
+  cloud:
+    config:
+      label: main  #分支名称
+      name: application  #配置文件名称
+      profile: dev  #读取后缀名称   上述三个综合http://config-19003.com:19003/main/application-dev.yml
+      uri: http://config-19003.com:19003/  #配置中心的地址
+
+# 暴露监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: 'debug'

@@ -12,8 +12,9 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: git@github.com:Andrew-Yang999/MircoserviceDemo1.git
           search-paths:
-            - springcloud-config
-      label: master
+            - Springcloud-config
+          default-label: main
+      label: main
 
