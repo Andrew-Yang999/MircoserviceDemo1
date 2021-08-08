@@ -1,0 +1,11 @@
+server:
+  port: 18003
+spring:
+  application:
+    name: Cloud-provider-payment18003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka17001.com:17001/eureka,http://eureka17002.com:17002/eureka #集群版
+    register-with-eureka: true
+    fetch-registry: true

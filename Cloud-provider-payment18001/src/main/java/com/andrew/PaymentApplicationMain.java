@@ -2,6 +2,7 @@ package com.andrew;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @package com.andrew.springcloud
  * @create 2021-05-30 16:00
  */
+@EnableDiscoveryClient
 @EnableEurekaClient
 @SpringBootApplication
 public class PaymentApplicationMain {

@@ -1,0 +1,36 @@
+server:
+  port: 19002
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh
+#          uri: http://localhost:18001
+          uri: lb://CLOUD-PROVIDER-PAYMENT #匹配后提供服务的路由地址,通过添加lb，开启gate的路由负载均衡，否则集群环境下可能报错
+          predicates:
+            - Path=/payment/select/{id}
+            - Method=GET   #请求方法必须时GET请求，才会被匹配到
+          filters:
+            #过滤器工厂会在匹配成功后的请求头上添加一对请求头，名称为X-Request-Id，值为1024
+            #将断言里的可变参数配置到value上
+            - AddRequestHeader=X-Request-Id,{id}
+        - id: payment_routh2
+#          uri: http://localhost:18001
+          uri: lb://CLOUD-PROVIDER-PAYMENT	 #匹配后提供服务的路由地址,通过添加lb，开启gate的路由负载均衡，否则集群环境下可能报错
+          predicates:
+            - Path=/payment/lb/**
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      defaultZone: http://eureka17001.com:17001/eureka,http://eureka17002.com:17002/eureka #集群版
+      register-with-eureka: true
+      fetch-registry: true
