@@ -1,0 +1,37 @@
+server:
+  port: 18805
+spring:
+  application:
+    name: cloud-sentinel-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.100.100:1111
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.100.100:8080
+      #添加nacos数据源配置，持久化sentinel上的流控规则
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.100.100:1111
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data_type: json
+            rule_type: flow
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+service-url:
+  nacos-user-service: http://cloudalibaba-provicer-payment
+
+#logging:
+#  level:
+#    root: 'DEBUG'
+feign:
+  sentinel:
+    enabled: true #激活sentinel对feign的支持

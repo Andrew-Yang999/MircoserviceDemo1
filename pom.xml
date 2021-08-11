@@ -23,6 +23,19 @@
         <module>Cloud-gateway-gateway19002</module>
         <module>Cloud-config-center-19003</module>
         <module>Cloud-config-client-19004</module>
+        <module>Cloud-config-client-19005</module>
+        <module>Cloud-stream-rabbitmq-provider18104</module>
+        <module>Cloud-stream-rabbitmq-consumer18105</module>
+        <module>Cloud-stream-rabbitmq-consumer18106</module>
+        <module>cloudalibaba-provicer-payment18201</module>
+        <module>cloudalibaba-provicer-payment18202</module>
+        <module>cloudalibaba-consumer-nacos-order18804</module>
+        <module>cloudalibaba-config-nacos18301</module>
+        <module>cloudalibaba-sentinel-service19101</module>
+        <module>cloudalibaba-sentinel-service19102</module>
+        <module>cloudalibaba-provicer-payment18203</module>
+        <module>cloudalibaba-provicer-payment18204</module>
+        <module>cloudalibaba-consumer-nacos-order18805</module>
     </modules>
 
     <name>MircoserviceDemo1</name>
@@ -33,9 +46,9 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
-        <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
+        <spring.cloud.version>Hoxton.SR11</spring.cloud.version>
+        <spring.cloud.alibaba.version>2.2.5.RELEASE</spring.cloud.alibaba.version>
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>8.0.19</mysql.version>
         <druid.version>1.1.16</druid.version>

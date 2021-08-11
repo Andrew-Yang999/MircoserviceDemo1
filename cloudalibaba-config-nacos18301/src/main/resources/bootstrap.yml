@@ -1,0 +1,17 @@
+#nacos配置
+server:
+  port: 18301
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.100.100:1111 #nacos服务注册中心
+      config:
+        server-addr: 192.168.100.100:1111 #nacos配置中心
+        file-extension: yaml # 指定yaml格式的配置文件
+        namespace: 50158144-d692-4d25-878e-99c5300e57e0 # DEV namespace
+#        namespace: 45800a85-89da-497a-a856-3d951f80985c # TEST namespace
+#        group: TEST_GROUP
+  # ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config-extension}

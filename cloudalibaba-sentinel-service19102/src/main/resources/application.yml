@@ -1,0 +1,25 @@
+server:
+  port: 19102
+spring:
+  application:
+    name: sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.100.100:1111
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.100.100:8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
+#logging:
+#  level:
+#    root: 'DEBUG'
